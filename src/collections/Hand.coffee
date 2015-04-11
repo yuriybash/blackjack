@@ -7,9 +7,9 @@ class window.Hand extends Backbone.Collection
   hit: ->
     @add(@deck.pop())
     if(@scores()[0] > 21)
-      @trigger "bust"
+      @trigger "bust", @isDealer
     else if((@scores()[0] is 21) or (@scores()[1] is 21))
-      @trigger "blackjack"
+      @trigger "blackjack", @isDealer
 
 
   hasAce: -> @reduce (memo, card) ->
