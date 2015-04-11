@@ -1,5 +1,6 @@
 class window.Card extends Backbone.Model
   initialize: (params) ->
+    # console.log("NEW CARD MODEL INITIALIZED")
     @set
       revealed: true
       value: if !params.rank or 10 < params.rank then 10 else params.rank
